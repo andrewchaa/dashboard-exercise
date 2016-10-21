@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
+﻿using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
-using Dashboard.App.ImportPnl.Domain.Models;
+using Dashboard.App.Domain.Models;
 
-namespace Dashboard.App.ImportPnl.Repositories
+namespace Dashboard.App.Domain.Repositories
 {
     public class PnLRepository : IPnLRepository
     {

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dashboard.App.ImportPnl.Domain.Services;
-using Dashboard.App.ImportPnl.Repositories;
+﻿using Dashboard.App.Domain.Repositories;
+using Dashboard.App.Domain.Services;
 using Ninject;
 
-namespace Dashboard.App.ImportPnl.Infrastructure
+namespace Dashboard.App.ImportPnl
 {
     public class IoC
     {

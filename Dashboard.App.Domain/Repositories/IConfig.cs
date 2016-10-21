@@ -1,4 +1,4 @@
-﻿namespace Dashboard.App.ImportPnl.Repositories
+﻿namespace Dashboard.App.Domain.Repositories
 {
     public interface IConfig
     {

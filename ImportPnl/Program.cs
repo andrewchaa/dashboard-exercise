@@ -8,10 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
-using Dashboard.App.ImportPnl.Domain.Models;
-using Dashboard.App.ImportPnl.Domain.Services;
-using Dashboard.App.ImportPnl.Infrastructure;
-using Dashboard.App.ImportPnl.Repositories;
+using Dashboard.App.Domain.Services;
+using Dashboard.App.ImportPnl;
 using Ninject;
 using static System.Decimal;
 

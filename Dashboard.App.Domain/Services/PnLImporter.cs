@@ -1,13 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dashboard.App.ImportPnl.Domain.Models;
-using Dashboard.App.ImportPnl.Repositories;
+using Dashboard.App.Domain.Models;
+using Dashboard.App.Domain.Repositories;
 
-namespace Dashboard.App.ImportPnl.Domain.Services
+namespace Dashboard.App.Domain.Services
 {
     public class PnLImporter : IImportPnL
     {

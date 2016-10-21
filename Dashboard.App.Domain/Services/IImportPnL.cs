@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Dashboard.App.ImportPnl.Domain.Services
+namespace Dashboard.App.Domain.Services
 {
     public interface IImportPnL
     {

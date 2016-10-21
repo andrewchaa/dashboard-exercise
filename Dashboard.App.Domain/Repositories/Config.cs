@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Dashboard.App.ImportPnl.Repositories
+namespace Dashboard.App.Domain.Repositories
 {
     public class Config : IConfig
     {

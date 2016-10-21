@@ -1,6 +1,6 @@
 using System;
 
-namespace Dashboard.App.ImportPnl.Domain.Models
+namespace Dashboard.App.Domain.Models
 {
     public class PnL
     {

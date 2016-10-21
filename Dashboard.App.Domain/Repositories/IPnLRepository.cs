@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Dashboard.App.ImportPnl.Domain.Models;
+using Dashboard.App.Domain.Models;
 
-namespace Dashboard.App.ImportPnl.Repositories
+namespace Dashboard.App.Domain.Repositories
 {
     public interface IPnLRepository
     {
