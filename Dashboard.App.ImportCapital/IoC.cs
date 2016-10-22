@@ -2,7 +2,7 @@
 using Dashboard.App.Domain.Services;
 using Ninject;
 
-namespace Dashboard.App.ImportPnl
+namespace Dashboard.App.ImportCapital
 {
     public class IoC
     {
@@ -25,8 +25,8 @@ namespace Dashboard.App.ImportPnl
         {
             _kernel = new StandardKernel();
             _kernel.Bind<IConfig>().To<Config>();
-            _kernel.Bind<IPnLRepository>().To<PnLRepository>();
-            _kernel.Bind<IImportPnL>().To<PnLImporter>();
+            _kernel.Bind<ICapitalRepository>().To<CapitalRepository>();
+            _kernel.Bind<IImportDataCsv>().To<CapitalImporter>();
         }
     }
 }

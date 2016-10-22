@@ -6,11 +6,11 @@ using Dashboard.App.Domain.Repositories;
 
 namespace Dashboard.App.Domain.Services
 {
-    public class PnLImporter : IImportDataCsv
+    public class CapitalImporter : IImportDataCsv
     {
-        private readonly IPnLRepository _repository;
+        private readonly ICapitalRepository _repository;
 
-        public PnLImporter(IPnLRepository repository)
+        public CapitalImporter(ICapitalRepository repository)
         {
             _repository = repository;
         }
@@ -23,8 +23,8 @@ namespace Dashboard.App.Domain.Services
                 var date = DateTime.ParseExact(columns[0], "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 for (int i = 1; i < 16; i++)
                 {
-                    var pnl = new PnL { Amount = decimal.Parse(columns[i]), Strategy = i, Date = date };
-                    _repository.Add(pnl);
+                    var capital = new Capital { Amount = decimal.Parse(columns[i]), Strategy = i, Date = date };
+                    _repository.Add(capital);
                 }
             }
 

@@ -24,7 +24,7 @@ namespace ImportPnl
 
             var lines = File.ReadAllLines(args[0]).Skip(1);
 
-            var importer = IoC.Kernel.Get<IImportPnL>();
+            var importer = IoC.Kernel.Get<IImportDataCsv>();
             importer.Import(lines);
         }
     }

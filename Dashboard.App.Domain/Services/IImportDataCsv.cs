@@ -2,7 +2,7 @@
 
 namespace Dashboard.App.Domain.Services
 {
-    public interface IImportPnL
+    public interface IImportDataCsv
     {
         void Import(IEnumerable<string> lines);
     }

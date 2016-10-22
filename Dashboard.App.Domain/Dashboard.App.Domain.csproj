@@ -45,13 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Capital.cs" />
     <Compile Include="Models\PnL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Config.cs" />
     <Compile Include="Repositories\IConfig.cs" />
+    <Compile Include="Repositories\ICapitalRepository.cs" />
     <Compile Include="Repositories\IPnLRepository.cs" />
+    <Compile Include="Repositories\CapitalRepository.cs" />
     <Compile Include="Repositories\PnLRepository.cs" />
-    <Compile Include="Services\IImportPnL.cs" />
+    <Compile Include="Services\IImportDataCsv.cs" />
+    <Compile Include="Services\CapitalImporter.cs" />
     <Compile Include="Services\PnLImporter.cs" />
   </ItemGroup>
   <ItemGroup>
