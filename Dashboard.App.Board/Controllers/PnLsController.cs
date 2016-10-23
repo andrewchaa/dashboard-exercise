@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Dashboard.App.Board.Domain.Contracts;
+using Dashboard.App.Board.Helpers;
+using Dashboard.App.Board.Models;
 
 namespace Dashboard.App.Board.Controllers
 {
@@ -16,38 +20,48 @@ namespace Dashboard.App.Board.Controllers
         }
 
         // GET: api/PnLs
-        public async Task<PnLViewModel> Get()
+//        public async Task<DataViewModel> Get()
+//        {
+//            var pnls = await _repository.ListByRegion(new DateTime(2010, 5, 31));
+//            var labels = pnls.Where(p => p.Region == "AP")
+//                .Select(p => p.Date.ToShortDateString());
+//            var aps = pnls.Where(p => p.Region == "AP").Select(p => p.Amount).CumulativeSum().ToList();
+//            var eus = pnls.Where(p => p.Region == "EU").Select(p => p.Amount).CumulativeSum().ToList();
+//            var uses = pnls.Where(p => p.Region == "US").Select(p => p.Amount).CumulativeSum().ToList();
+//
+//            var pnlViewModel = new DataViewModel
+//            {
+//                Labels = labels,
+//                Data = new List<List<decimal>>
+//                {
+//                    aps, eus, uses
+//                }
+//            };
+//
+//            return pnlViewModel;
+//        }
+
+        // GET: api/PnLs/2012-01-01
+        [Route("api/PnLs/{date}")]
+        public async Task<DataViewModel> Get(string date)
         {
-            var pnls = await _repository.ListByRegion();
+            var pnls = await _repository.ListByRegion(DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture));
             var labels = pnls.Where(p => p.Region == "AP")
                 .Select(p => p.Date.ToShortDateString());
-            var aps = pnls.Where(p => p.Region == "AP").Select(p => p.Amount).ToList();
-            var eus = pnls.Where(p => p.Region == "EU").Select(p => p.Amount).ToList();
-            var uses = pnls.Where(p => p.Region == "US").Select(p => p.Amount).ToList();
+            var aps = pnls.Where(p => p.Region == "AP").Select(p => p.Amount).CumulativeSum().ToList();
+            var eus = pnls.Where(p => p.Region == "EU").Select(p => p.Amount).CumulativeSum().ToList();
+            var uses = pnls.Where(p => p.Region == "US").Select(p => p.Amount).CumulativeSum().ToList();
 
-            var pnlViewModel = new PnLViewModel
+            var pnlViewModel = new DataViewModel
             {
-//                Labels = new List<string> { "2014-02-01", "2014-02-02", "2014-02-03" },
                 Labels = labels,
                 Data = new List<List<decimal>>
                 {
                     aps, eus, uses
                 }
-//                Data = new List<List<decimal>>
-//                {
-//                    new List<decimal> { 11m, 13m, 15m },
-//                    new List<decimal> { 12m, 11m, 16m },
-//                    new List<decimal> { 10m, 16m, 14m },
-//                }
             };
 
             return pnlViewModel;
-        }
-
-        // GET: api/PnLs/5
-        public string Get(int id)
-        {
-            return "value";
         }
 
         // POST: api/PnLs
@@ -64,11 +78,5 @@ namespace Dashboard.App.Board.Controllers
         public void Delete(int id)
         {
         }
-    }
-
-    public class PnLViewModel
-    {
-        public IEnumerable<string> Labels { get; set; }
-        public IEnumerable<IEnumerable<decimal>> Data { get; set; }
     }
 }
