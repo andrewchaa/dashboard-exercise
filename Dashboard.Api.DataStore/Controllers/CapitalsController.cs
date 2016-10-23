@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Dashboard.Api.DataStore.Domain.Contracts;
-using Dashboard.Api.DataStore.Domain.Models;
+using Dashboard.Api.DataStore.Domain.Services;
 using Dashboard.Api.DataStore.Models;
 
 namespace Dashboard.Api.DataStore.Controllers
@@ -13,10 +13,12 @@ namespace Dashboard.Api.DataStore.Controllers
     public class CapitalsController : ApiController
     {
         private readonly ICapitalRepository _capitalRepository;
+        private readonly ICrunchData _dataCruncher;
 
-        public CapitalsController(ICapitalRepository capitalRepository)
+        public CapitalsController(ICapitalRepository capitalRepository, ICrunchData dataCruncher)
         {
             _capitalRepository = capitalRepository;
+            _dataCruncher = dataCruncher;
         }
 
         // GET: api/Capitals

@@ -1,4 +1,5 @@
 using Dashboard.Api.DataStore.Domain.Contracts;
+using Dashboard.Api.DataStore.Domain.Services;
 using Dashboard.Api.DataStore.Helpers;
 using Dashboard.Api.DataStore.Repositories;
 
@@ -68,6 +69,8 @@ namespace Dashboard.Api.DataStore.App_Start
             kernel.Bind<IConfig>().To<Config>();
             kernel.Bind<IPnLRepository>().To<PnLRepository>();
             kernel.Bind<ICapitalRepository>().To<CapitalRepository>();
+            kernel.Bind<ICrunchData>().To<DataCruncher>();
+            kernel.Bind<IStrategyRepository>().To<StrategyRepository>();
         }
     }
 }

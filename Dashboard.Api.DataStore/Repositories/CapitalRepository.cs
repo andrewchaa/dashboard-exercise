@@ -28,5 +28,21 @@ namespace Dashboard.Api.DataStore.Repositories
                 query, new { strategyId} );
 
         }
+
+        public async Task<IEnumerable<Capital>> ListBy(string region)
+        {
+            var query =
+                "  select c.Date, c.Strategy, c.Amount, s.Region " +
+                "   from Capitals c JOIN Strategies s " +
+                "     on c.Strategy = s.StrategyId " +
+                "  where s.Region = @region " +
+                "  order by c.Strategy, c.Date "
+                ;
+
+            return await Query.ExecuteAsync<Capital>(
+                _config.GetConnectionString("Dashboard"),
+                query, new { region} );
+
+        }
     }
 }

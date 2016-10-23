@@ -4,9 +4,8 @@ using Dashboard.Api.DataStore.Domain.Models;
 
 namespace Dashboard.Api.DataStore.Domain.Contracts
 {
-    public interface ICapitalRepository
+    public interface IStrategyRepository
     {
-        Task<IEnumerable<Capital>> ListBy(int strategyId);
-        Task<IEnumerable<Capital>> ListBy(string region);
+        Task<IEnumerable<Strategy>> ListBy(string region);
     }
 }

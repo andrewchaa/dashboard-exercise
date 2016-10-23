@@ -8,6 +8,6 @@ namespace Dashboard.Api.DataStore.Domain.Contracts
     public interface IPnLRepository
     {
         Task<IEnumerable<PnLByRegion>> ListByRegion(DateTime byDate);
-
+        Task<IEnumerable<PnLCapital>> ListBy(int strategy, DateTime byDate);
     }
 }
