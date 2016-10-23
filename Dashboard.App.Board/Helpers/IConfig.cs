@@ -1,4 +1,4 @@
-﻿namespace Dashboard.App.Domain.Repositories
+﻿namespace Dashboard.App.Board.Helpers
 {
     public interface IConfig
     {

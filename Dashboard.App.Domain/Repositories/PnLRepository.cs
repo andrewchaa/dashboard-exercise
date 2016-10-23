@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
+using Dashboard.App.Domain.Contracts;
 using Dashboard.App.Domain.Models;
 
 namespace Dashboard.App.Domain.Repositories
@@ -21,7 +22,7 @@ namespace Dashboard.App.Domain.Repositories
             {
                 connection.Open();
                 var id = await connection.ExecuteAsync(
-                    "INSERT INTO PnL (Date, Strategy, Amount) VALUES (@Date, @Strategy, @Amount)",
+                    "INSERT INTO PnLs (Date, Strategy, Amount) VALUES (@Date, @Strategy, @Amount)",
                     new { pnl.Date, pnl.Strategy, pnl.Amount });
 
 

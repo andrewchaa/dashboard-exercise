@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Dashboard.App.Domain.Contracts;
 using Dashboard.App.Domain.Services;
 using Ninject;
 
@@ -12,7 +13,7 @@ namespace Dashboard.App.ImportCapital
         static void Main(string[] args)
         {
             if (args.Length == 0)
-                Console.WriteLine("Please specify the P&L file name to import");
+                Console.WriteLine("Please specify the capital file name you want to import");
 
             var lines = File.ReadAllLines(args[0]).Skip(1);
 

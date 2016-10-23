@@ -1,0 +1,18 @@
+﻿
+
+<h2>P&amp;L</h2>
+
+<div class="ct-chart ct-perfect-fourth"></div>
+
+<script>
+    $(function () {
+        $.get('/api/Pnls', function (data) {
+            console.log(data);
+            var chartData = {
+                labels: data.Labels,
+                series: data.Data
+            };
+            new Chartist.Line('.ct-chart', chartData);
+        })
+    })
+</script>

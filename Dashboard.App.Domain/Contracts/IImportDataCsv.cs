@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Dashboard.App.Domain.Services
+namespace Dashboard.App.Domain.Contracts
 {
     public interface IImportDataCsv
     {

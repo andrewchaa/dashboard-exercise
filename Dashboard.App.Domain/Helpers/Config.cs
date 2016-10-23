@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
+using Dashboard.App.Domain.Contracts;
 
-namespace Dashboard.App.Domain.Repositories
+namespace Dashboard.App.Domain.Helpers
 {
     public class Config : IConfig
     {

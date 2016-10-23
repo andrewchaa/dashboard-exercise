@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using Dashboard.App.Domain.Contracts;
 using Dashboard.App.Domain.Services;
 using Dashboard.App.ImportPnl;
 using Ninject;

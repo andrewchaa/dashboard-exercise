@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.App.ImportCapital
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.App.Domain", "Dashboard.App.Domain\Dashboard.App.Domain.csproj", "{5B762B6F-48FD-421F-AB9D-085DE9FE4BD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.App.ImportStrategy", "Dashboard.App.ImportStrategy\Dashboard.App.ImportStrategy.csproj", "{58D11781-0680-4A1F-A473-395B1DB14589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.App.Board", "Dashboard.App.Board\Dashboard.App.Board.csproj", "{76E01E58-886E-4872-A3C1-4634AD1C77E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{5B762B6F-48FD-421F-AB9D-085DE9FE4BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B762B6F-48FD-421F-AB9D-085DE9FE4BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B762B6F-48FD-421F-AB9D-085DE9FE4BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D11781-0680-4A1F-A473-395B1DB14589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D11781-0680-4A1F-A473-395B1DB14589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D11781-0680-4A1F-A473-395B1DB14589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D11781-0680-4A1F-A473-395B1DB14589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E01E58-886E-4872-A3C1-4634AD1C77E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E01E58-886E-4872-A3C1-4634AD1C77E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E01E58-886E-4872-A3C1-4634AD1C77E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E01E58-886E-4872-A3C1-4634AD1C77E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

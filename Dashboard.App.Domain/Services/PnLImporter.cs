@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Dashboard.App.Domain.Contracts;
 using Dashboard.App.Domain.Models;
 using Dashboard.App.Domain.Repositories;
 
