@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.App.ImportStrateg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.App.Board", "Dashboard.App.Board\Dashboard.App.Board.csproj", "{76E01E58-886E-4872-A3C1-4634AD1C77E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.Api.DataStore", "Dashboard.Api.DataStore\Dashboard.Api.DataStore.csproj", "{76D15613-3F53-47C8-B089-E3F523A5AB06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{76E01E58-886E-4872-A3C1-4634AD1C77E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E01E58-886E-4872-A3C1-4634AD1C77E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E01E58-886E-4872-A3C1-4634AD1C77E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D15613-3F53-47C8-B089-E3F523A5AB06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D15613-3F53-47C8-B089-E3F523A5AB06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D15613-3F53-47C8-B089-E3F523A5AB06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D15613-3F53-47C8-B089-E3F523A5AB06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

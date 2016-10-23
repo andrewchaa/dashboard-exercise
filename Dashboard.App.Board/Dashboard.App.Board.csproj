@@ -101,6 +101,10 @@
       <HintPath>..\packages\Ninject.Web.WebApi.WebHost.3.2.4.0\lib\net45-full\Ninject.Web.WebApi.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -263,19 +267,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PnLsController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Domain\Contracts\IConfig.cs" />
     <Compile Include="Domain\Contracts\IPnLRepository.cs" />
-    <Compile Include="Domain\Models\PnL.cs" />
+    <Compile Include="Domain\Contracts\ICumulativePnLStore.cs" />
     <Compile Include="Domain\Models\PnLByRegion.cs" />
+    <Compile Include="Domain\Services\CumulativePnLStore.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Config.cs" />
     <Compile Include="Helpers\DecimalHelpers.cs" />
-    <Compile Include="Helpers\IConfig.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataViewModel.cs" />

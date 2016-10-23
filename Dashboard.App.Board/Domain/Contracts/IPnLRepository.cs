@@ -7,7 +7,6 @@ namespace Dashboard.App.Board.Domain.Contracts
 {
     public interface IPnLRepository
     {
-        Task<IEnumerable<PnL>> List();
         Task<IEnumerable<PnLByRegion>> ListByRegion(DateTime byDate);
 
     }

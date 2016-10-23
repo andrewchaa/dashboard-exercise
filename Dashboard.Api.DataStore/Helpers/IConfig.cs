@@ -1,4 +1,4 @@
-﻿namespace Dashboard.App.Board.Helpers
+﻿namespace Dashboard.Api.DataStore.Helpers
 {
     public interface IConfig
     {
