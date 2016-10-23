@@ -67,6 +67,7 @@ namespace Dashboard.Api.DataStore.App_Start
         {
             kernel.Bind<IConfig>().To<Config>();
             kernel.Bind<IPnLRepository>().To<PnLRepository>();
+            kernel.Bind<ICapitalRepository>().To<CapitalRepository>();
         }
     }
 }

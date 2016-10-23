@@ -29,19 +29,11 @@ namespace Dashboard.Api.DataStore.Repositories
                 " order by s.Region, p.Date "
                 ;
 
-            return await ExecuteQueryAsync(query, new { byDate });
+            return await Query.ExecuteAsync<PnLByRegion>(
+                _config.GetConnectionString("Dashboard"),
+                query, new { byDate }
+                );
         }
 
-        private async Task<IEnumerable<PnLByRegion>> ExecuteQueryAsync(string query, object param = null)
-        {
-            var connectionStr = _config.GetConnectionString("Dashboard");
-            using (var connection = new SqlConnection(connectionStr))
-            {
-                connection.Open();
-                var pnLs = await connection.QueryAsync<PnLByRegion>(query, param);
-
-                return pnLs;
-            }
-        }
     }
 }

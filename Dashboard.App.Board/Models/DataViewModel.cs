@@ -4,7 +4,7 @@ namespace Dashboard.App.Board.Models
 {
     public class DataViewModel
     {
-        public IEnumerable<string> Labels { get; set; }
-        public IEnumerable<IEnumerable<decimal>> Data { get; set; }
+        public List<string> Labels { get; set; }
+        public List<List<decimal>> Data { get; set; }
     }
 }

@@ -4,8 +4,9 @@ using Dashboard.App.Board.Models;
 
 namespace Dashboard.App.Board.Domain.Contracts
 {
-    public interface ICumulativePnLStore
+    public interface IDataApi
     {
-        Task<DataViewModel> ListCumulativePnL(DateTime byDate);
+        Task<DataViewModel> ListCumulativePnLs(DateTime byDate);
+        Task<DataViewModel> ListCapitals();
     }
 }

@@ -9,11 +9,11 @@ namespace Dashboard.App.Board.Controllers
 {
     public class PnLsController : ApiController
     {
-        private readonly ICumulativePnLStore _cumulativePnLStore;
+        private readonly IDataApi _dataApi;
 
-        public PnLsController(ICumulativePnLStore cumulativePnLStore)
+        public PnLsController(IDataApi dataApi)
         {
-            _cumulativePnLStore = cumulativePnLStore;
+            _dataApi = dataApi;
         }
 
         // GET: api/PnLs/2012-01-01
@@ -21,7 +21,7 @@ namespace Dashboard.App.Board.Controllers
         public async Task<DataViewModel> Get(string date)
         {
             var byDate = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            var pnlViewModel = await _cumulativePnLStore.ListCumulativePnL(byDate);
+            var pnlViewModel = await _dataApi.ListCumulativePnLs(byDate);
 
             return pnlViewModel;
         }

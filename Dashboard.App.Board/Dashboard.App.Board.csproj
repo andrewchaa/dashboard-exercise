@@ -268,24 +268,26 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CapitalsController.cs" />
     <Compile Include="Controllers\PnLsController.cs" />
+    <Compile Include="Controllers\SamplesController.cs" />
+    <Compile Include="Domain\Contracts\ICapitalRepository.cs" />
     <Compile Include="Domain\Contracts\IConfig.cs" />
     <Compile Include="Domain\Contracts\IPnLRepository.cs" />
-    <Compile Include="Domain\Contracts\ICumulativePnLStore.cs" />
+    <Compile Include="Domain\Contracts\IDataApi.cs" />
+    <Compile Include="Domain\Models\Capital.cs" />
     <Compile Include="Domain\Models\PnLByRegion.cs" />
-    <Compile Include="Domain\Services\CumulativePnLStore.cs" />
+    <Compile Include="Domain\Services\DataApi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Config.cs" />
-    <Compile Include="Helpers\DecimalHelpers.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
-    <Compile Include="Repositories\PnLRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -334,6 +336,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\capital-page.js" />
+    <Content Include="Scripts\pnl-page.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
@@ -352,9 +356,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Pnl.cshtml" />
+    <Content Include="Views\Home\Capital.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

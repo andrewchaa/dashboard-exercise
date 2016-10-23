@@ -1,7 +1,6 @@
 using Dashboard.App.Board.Domain.Contracts;
 using Dashboard.App.Board.Domain.Services;
 using Dashboard.App.Board.Helpers;
-using Dashboard.App.Board.Repositories;
 using RestSharp;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Dashboard.App.Board.App_Start.NinjectWebCommon), "Start")]
@@ -68,8 +67,7 @@ namespace Dashboard.App.Board.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IConfig>().To<Config>();
-            kernel.Bind<ICumulativePnLStore>().To<CumulativePnLStore>();
-            kernel.Bind<IPnLRepository>().To<PnLRepository>();
+            kernel.Bind<IDataApi>().To<DataApi>();
         }        
     }
 }

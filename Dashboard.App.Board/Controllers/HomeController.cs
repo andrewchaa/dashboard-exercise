@@ -19,5 +19,10 @@ namespace Dashboard.App.Board.Controllers
         {
             return View();
         }
+
+        public ActionResult Capital()
+        {
+            return View();
+        }
     }
 }
