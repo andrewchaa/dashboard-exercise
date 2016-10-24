@@ -13,7 +13,9 @@ namespace ImportPnl
         private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
 
         static void Main(string[] args)
-        {            
+        {
+            Console.WriteLine("Importing P&Ls");
+
             if (args.Length == 0)
                 Console.WriteLine("Please specify the P&L file name to import");
 

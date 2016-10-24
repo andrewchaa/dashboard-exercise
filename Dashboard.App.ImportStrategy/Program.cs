@@ -13,6 +13,8 @@ namespace Dashboard.App.ImportStrategy
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Importing strategies");
+
             if (args.Length == 0)
                 Console.WriteLine("Please specify the capital file name you want to import");
 

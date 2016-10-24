@@ -15,6 +15,8 @@ namespace Dashboard.App.ImportCapital
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Importing Capitals");
+
             if (args.Length == 0)
                 Console.WriteLine("Please specify the capital file name you want to import");
 
