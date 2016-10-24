@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dashboard.Api.DataStore.Controllers;
+﻿using Dashboard.Api.DataStore.Controllers;
 using Dashboard.Api.DataStore.Domain.Contracts;
 using Machine.Specifications;
 using Moq;
+using It = Machine.Specifications.It;
 
 namespace Dashboard.Tests.ApiTests
 {
@@ -15,17 +11,18 @@ namespace Dashboard.Tests.ApiTests
         [Subject(typeof(CapitalsController))]
         public class When_get_request_is_made
         {
+            private static CapitalsController _controller;
+            private static Mock<ICrunchData> _dataCruncher;
+
             Establish context = () =>
             {
-                var capitalRepository = new Mock<ICapitalRepository>();
-                var dataCruncher = new Mock<ICrunchData>();
-//                _controller = new CapitalsController(capitalRepository.Object, dataCruncher.Object);
+                _dataCruncher = new Mock<ICrunchData>();
+                _controller = new CapitalsController(_dataCruncher.Object);
             };
 
             Because of = async () => await _controller.Get();
 
-
-            private static CapitalsController _controller;
+            It should_list_monthly_capitals = () => _dataCruncher.Verify(d => d.ListMonthlyCapitals());
         }
     }
 }
