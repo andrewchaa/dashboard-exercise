@@ -2,13 +2,14 @@
 using System.Web.Http;
 using Dashboard.App.Board.Domain.Contracts;
 using Dashboard.App.Board.Models;
+using NLog;
 
 namespace Dashboard.App.Board.Controllers
 {
     public class CapitalsController : ApiController
     {
         private readonly IDataApi _dataApi;
-        private readonly ICapitalRepository _capitalRepository;
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
 
         public CapitalsController(IDataApi dataApi)
         {
@@ -18,6 +19,8 @@ namespace Dashboard.App.Board.Controllers
         // GET: api/capitals
         public async Task<DataViewModel> Get()
         {
+            Logger.Info("get requeset ...");
+
             return await _dataApi.ListCapitals();
         }
     }

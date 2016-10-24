@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Dashboard.Api.DataStore.Domain.Contracts;
 using Dashboard.Api.DataStore.Domain.Models;
-using Dashboard.Api.DataStore.Helpers;
+using NLog;
 
 namespace Dashboard.Api.DataStore.Domain.Services
 {
@@ -14,6 +13,7 @@ namespace Dashboard.Api.DataStore.Domain.Services
         private readonly IStrategyRepository _strategyRepository;
         private readonly IPnLRepository _pnLRepository;
         private readonly ICapitalRepository _capitalRepository;
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
 
         public DataCruncher(IStrategyRepository strategyRepository, IPnLRepository pnLRepository,
             ICapitalRepository capitalRepository)
@@ -27,6 +27,8 @@ namespace Dashboard.Api.DataStore.Domain.Services
         public async Task<IEnumerable<IEnumerable<PnLDailyReturn>>> ListDailyReturns(
             string region, DateTime byDate)
         {
+            Logger.Info("Listing daily returns by {0} and {1}", region, byDate);
+
             var strategies = await _strategyRepository.ListBy(region);
             var pnlCapitals = new List<IEnumerable<PnLDailyReturn>>();
 
@@ -49,6 +51,8 @@ namespace Dashboard.Api.DataStore.Domain.Services
 
         public async Task<IEnumerable<IEnumerable<PnLByRegion>>> ListPnLs(DateTime byDate)
         {
+            Logger.Info("Listing Pnls by {0}", byDate);
+
             var pnls = await _pnLRepository.ListByRegion(byDate);
 
             return new List<IEnumerable<PnLByRegion>>
@@ -62,6 +66,8 @@ namespace Dashboard.Api.DataStore.Domain.Services
 
         public async Task<IEnumerable<IEnumerable<Capital>>> ListMonthlyCapitals()
         {
+            Logger.Info("Listing monthly capitals");
+
             var capitals1 = _capitalRepository.ListBy(1);
             var capitals4 = _capitalRepository.ListBy(4);
             var capitals8 = _capitalRepository.ListBy(8);

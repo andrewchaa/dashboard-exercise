@@ -6,12 +6,15 @@ using System.Web.Http;
 using Dashboard.Api.DataStore.Domain.Contracts;
 using Dashboard.Api.DataStore.Helpers;
 using Dashboard.Api.DataStore.Models;
+using NLog;
 
 namespace Dashboard.Api.DataStore.Controllers
 {
     public class DailyReturnsController : ApiController
     {
         private readonly ICrunchData _dataCruncher;
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
+
 
         public DailyReturnsController(ICrunchData dataCruncher)
         {
@@ -22,6 +25,8 @@ namespace Dashboard.Api.DataStore.Controllers
         [Route("api/dailyreturns/{region}/{date}")]
         public async Task<DataViewModel> Get(string region, string date)
         {
+            Logger.Info("get request ... with {0} and {1}", region, date);
+
             var byDate = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             var dailyReturns = await _dataCruncher.ListDailyReturns(
                 region.ToUpper(), byDate);

@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Dashboard.Api.DataStore.Domain.Contracts;
-using Dashboard.Api.DataStore.Domain.Services;
 using Dashboard.Api.DataStore.Models;
+using NLog;
 
 namespace Dashboard.Api.DataStore.Controllers
 {
     public class CapitalsController : ApiController
     {
         private readonly ICrunchData _dataCruncher;
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
 
         public CapitalsController(ICrunchData dataCruncher)
         {
@@ -22,6 +20,8 @@ namespace Dashboard.Api.DataStore.Controllers
         // GET: api/Capitals
         public async Task<DataViewModel> Get()
         {
+            Logger.Info("get request ...");
+
             var capitalsList = await _dataCruncher.ListMonthlyCapitals();
             return new DataViewModel
             {
