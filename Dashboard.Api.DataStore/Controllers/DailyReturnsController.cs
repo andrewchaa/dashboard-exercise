@@ -23,7 +23,7 @@ namespace Dashboard.Api.DataStore.Controllers
         public async Task<DataViewModel> Get(string region, string date)
         {
             var byDate = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            var dailyReturns = await _dataCruncher.ListAccumulativeReturn(
+            var dailyReturns = await _dataCruncher.ListDailyReturns(
                 region.ToUpper(), byDate);
 
             var labels = dailyReturns.First().Select(d => d.Date.ToShortDateString());

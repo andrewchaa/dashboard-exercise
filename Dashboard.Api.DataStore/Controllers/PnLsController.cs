@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,12 +11,10 @@ namespace Dashboard.Api.DataStore.Controllers
 {
     public class PnLsController : ApiController
     {
-        private readonly IPnLRepository _pnlRepository;
         private readonly ICrunchData _dataCruncher;
 
-        public PnLsController(IPnLRepository _pnlRepository, ICrunchData dataCruncher)
+        public PnLsController(ICrunchData dataCruncher)
         {
-            this._pnlRepository = _pnlRepository;
             _dataCruncher = dataCruncher;
         }
 

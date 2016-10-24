@@ -24,7 +24,7 @@ namespace Dashboard.Api.DataStore.Domain.Services
         }
 
 
-        public async Task<IEnumerable<IEnumerable<PnLDailyReturn>>> ListAccumulativeReturn(
+        public async Task<IEnumerable<IEnumerable<PnLDailyReturn>>> ListDailyReturns(
             string region, DateTime byDate)
         {
             var strategies = await _strategyRepository.ListBy(region);
