@@ -11,11 +11,14 @@ namespace Dashboard.Api.DataStore.Domain.Services
     {
         private readonly IStrategyRepository _strategyRepository;
         private readonly IPnLRepository _pnLRepository;
+        private readonly ICapitalRepository _capitalRepository;
 
-        public DataCruncher(IStrategyRepository strategyRepository, IPnLRepository pnLRepository)
+        public DataCruncher(IStrategyRepository strategyRepository, IPnLRepository pnLRepository,
+            ICapitalRepository capitalRepository)
         {
             _strategyRepository = strategyRepository;
             _pnLRepository = pnLRepository;
+            _capitalRepository = capitalRepository;
         }
 
 
@@ -40,6 +43,20 @@ namespace Dashboard.Api.DataStore.Domain.Services
             }
 
             return pnlCapitals;
+        }
+
+        public async Task<IEnumerable<IEnumerable<Capital>>> ListMonthlyCapitals()
+        {
+            var capitals1 = _capitalRepository.ListBy(1);
+            var capitals4 = _capitalRepository.ListBy(4);
+            var capitals8 = _capitalRepository.ListBy(8);
+            var capitals9 = _capitalRepository.ListBy(9);
+            var capitals14 = _capitalRepository.ListBy(14);
+
+            var capitalsList = await Task.WhenAll(capitals1, capitals4, capitals8, capitals9,
+                capitals14);
+
+            return capitalsList;
         }
     }
 }

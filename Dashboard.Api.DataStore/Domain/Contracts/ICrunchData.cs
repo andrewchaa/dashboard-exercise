@@ -8,5 +8,6 @@ namespace Dashboard.Api.DataStore.Domain.Contracts
     public interface ICrunchData
     {
         Task<IEnumerable<IEnumerable<PnLDailyReturn>>> ListAccumulativeReturn(string region, DateTime byDate);
+        Task<IEnumerable<IEnumerable<Capital>>> ListMonthlyCapitals();
     }
 }
