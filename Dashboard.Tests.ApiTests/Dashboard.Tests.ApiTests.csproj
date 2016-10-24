@@ -70,6 +70,7 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataCruncherTests.cs" />
     <Compile Include="PnLsControllerTests.cs" />
     <Compile Include="DailyReturnsControllerTests.cs" />
     <Compile Include="CapitalsControllerTests.cs" />
