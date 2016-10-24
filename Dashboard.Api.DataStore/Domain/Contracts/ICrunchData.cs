@@ -9,5 +9,6 @@ namespace Dashboard.Api.DataStore.Domain.Contracts
     {
         Task<IEnumerable<IEnumerable<PnLDailyReturn>>> ListAccumulativeReturn(string region, DateTime byDate);
         Task<IEnumerable<IEnumerable<Capital>>> ListMonthlyCapitals();
+        Task<IEnumerable<IEnumerable<PnLByRegion>>> ListPnLs(DateTime byDate);
     }
 }

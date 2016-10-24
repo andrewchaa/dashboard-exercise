@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Dashboard.Api.DataStore.Domain.Contracts;
 using Dashboard.Api.DataStore.Domain.Models;
+using Dashboard.Api.DataStore.Helpers;
 
 namespace Dashboard.Api.DataStore.Domain.Services
 {
@@ -43,6 +45,19 @@ namespace Dashboard.Api.DataStore.Domain.Services
             }
 
             return pnlCapitals;
+        }
+
+        public async Task<IEnumerable<IEnumerable<PnLByRegion>>> ListPnLs(DateTime byDate)
+        {
+            var pnls = await _pnLRepository.ListByRegion(byDate);
+
+            return new List<IEnumerable<PnLByRegion>>
+            {
+                pnls.Where(p => p.Region == "AP"),
+                pnls.Where(p => p.Region == "EU"),
+                pnls.Where(p => p.Region == "US")
+            };
+
         }
 
         public async Task<IEnumerable<IEnumerable<Capital>>> ListMonthlyCapitals()

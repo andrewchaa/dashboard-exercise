@@ -13,10 +13,12 @@ namespace Dashboard.Api.DataStore.Controllers
     public class PnLsController : ApiController
     {
         private readonly IPnLRepository _pnlRepository;
+        private readonly ICrunchData _dataCruncher;
 
-        public PnLsController(IPnLRepository _pnlRepository)
+        public PnLsController(IPnLRepository _pnlRepository, ICrunchData dataCruncher)
         {
             this._pnlRepository = _pnlRepository;
+            _dataCruncher = dataCruncher;
         }
 
         // GET: api/PnLs/2012-01-01
@@ -24,20 +26,12 @@ namespace Dashboard.Api.DataStore.Controllers
         public async Task<DataViewModel> Get(string date)
         {
             var byDate = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            var pnls = await _pnlRepository.ListByRegion(byDate);
-
-            var labels = pnls.Where(p => p.Region == "AP").Select(p => p.Date.ToShortDateString());
-            var aps = pnls.Where(p => p.Region == "AP").Select(p => p.Amount).CumulativeSum().ToList();
-            var eus = pnls.Where(p => p.Region == "EU").Select(p => p.Amount).CumulativeSum().ToList();
-            var uses = pnls.Where(p => p.Region == "US").Select(p => p.Amount).CumulativeSum().ToList();
+            var pnlsList = await _dataCruncher.ListPnLs(byDate);
 
             return new DataViewModel
             {
-                Labels = labels.ToList(),
-                Data = new List<List<decimal>>
-                {
-                    aps, eus, uses
-                }
+                Labels = pnlsList.First().Select(p => p.Date.ToShortDateString()),
+                Data = pnlsList.Select(p => p.Select(n => n.Amount).CumulativeSum())
             };
         }
     }
