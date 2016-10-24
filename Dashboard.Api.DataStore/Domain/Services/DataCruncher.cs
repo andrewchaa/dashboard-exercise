@@ -28,13 +28,15 @@ namespace Dashboard.Api.DataStore.Domain.Services
             foreach (var strategy in strategies)
             {
                 var pnlCapital = await _pnLRepository.ListBy(strategy.StrategyId, byDate);
-                pnlCapitals.Add(pnlCapital.Select(p => new PnLDailyReturn {
+                var dailyReturns = pnlCapital.Select(p => new PnLDailyReturn {
                     Strategy = p.Strategy,
                     Date = p.Date,
                     PnL = p.PnL,
                     Capital = p.Capital,
                     DailyReturn = Math.Round(p.PnL / p.Capital * 100m, 2)
-                }));
+                });
+                
+                pnlCapitals.Add(dailyReturns);
             }
 
             return pnlCapitals;

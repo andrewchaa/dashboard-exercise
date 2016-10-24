@@ -5,8 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Dashboard.Api.DataStore.Domain.Contracts;
+using Dashboard.Api.DataStore.Helpers;
 using Dashboard.Api.DataStore.Models;
-using Dashboard.App.Board.Helpers;
 
 namespace Dashboard.Api.DataStore.Controllers
 {

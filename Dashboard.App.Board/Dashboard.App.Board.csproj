@@ -269,6 +269,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CapitalsController.cs" />
+    <Compile Include="Controllers\DailyReturnsController.cs" />
     <Compile Include="Controllers\PnLsController.cs" />
     <Compile Include="Controllers\SamplesController.cs" />
     <Compile Include="Domain\Contracts\ICapitalRepository.cs" />
@@ -337,6 +338,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\capital-page.js" />
+    <Content Include="Scripts\dailyreturn-page.js" />
     <Content Include="Scripts\pnl-page.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -357,6 +359,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Pnl.cshtml" />
     <Content Include="Views\Home\Capital.cshtml" />
+    <Content Include="Views\Home\DailyReturn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

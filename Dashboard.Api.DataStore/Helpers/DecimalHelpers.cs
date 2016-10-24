@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Dashboard.App.Board.Helpers
+namespace Dashboard.Api.DataStore.Helpers
 {
     public static class DecimalHelpers
     {

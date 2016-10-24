@@ -8,5 +8,6 @@ namespace Dashboard.App.Board.Domain.Contracts
     {
         Task<DataViewModel> ListCumulativePnLs(DateTime byDate);
         Task<DataViewModel> ListCapitals();
+        Task<DataViewModel> ListCumulativeReturns(string region, DateTime byDate);
     }
 }
