@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dashboard.Api.DataStore.Domain.Contracts;
 using Dashboard.Api.DataStore.Domain.Models;
 using Dashboard.Api.DataStore.Domain.Services;

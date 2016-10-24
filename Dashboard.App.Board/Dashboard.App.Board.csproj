@@ -271,7 +271,6 @@
     <Compile Include="Controllers\CapitalsController.cs" />
     <Compile Include="Controllers\DailyReturnsController.cs" />
     <Compile Include="Controllers\PnLsController.cs" />
-    <Compile Include="Controllers\SamplesController.cs" />
     <Compile Include="Domain\Contracts\ICapitalRepository.cs" />
     <Compile Include="Domain\Contracts\IConfig.cs" />
     <Compile Include="Domain\Contracts\IPnLRepository.cs" />
@@ -363,7 +362,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
