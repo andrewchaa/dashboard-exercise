@@ -37,8 +37,8 @@ namespace Dashboard.Api.DataStore.Controllers
 
             return new DataViewModel
             {
-                Labels = labels,
-                Data = data
+                labels = labels,
+                series = data
             };
         }
 

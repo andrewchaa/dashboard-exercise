@@ -31,8 +31,8 @@ namespace Dashboard.Api.DataStore.Controllers
 
             return new DataViewModel
             {
-                Labels = pnlsList.First().Select(p => p.Date.ToShortDateString()),
-                Data = pnlsList.Select(p => p.Select(n => n.Amount).CumulativeSum())
+                labels = pnlsList.First().Select(p => p.Date.ToShortDateString()),
+                series = pnlsList.Select(p => p.Select(n => n.Amount).CumulativeSum())
             };
         }
     }

@@ -1,16 +1,57 @@
 import React, { Component } from 'react';
 import ChartistGraph from 'react-chartist';
 
-const simpleLineChartData = {
-  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-  series: [
-    [12, 9, 7, 8, 5],
-    [2, 1, 3.5, 7, 3],
-    [1, 3, 4, 5, 6]
-  ]
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  } else {
+    const error = new Error(`HTTP Error ${response.statusText}`);
+    error.status = response.statusText;
+    error.response = response;
+    console.log(error); // eslint-disable-line no-console
+    throw error;
+  }
+}
+
+function parseJSON(response) {
+  return response.json();
 }
 
 class Pnl extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      chartData : { labels: [], series: [] }
+    };
+  }
+
+  changeContent = (data) => {
+    console.log(data);
+    this.setState({chartData: data})
+  }
+
+  refresh(cb) {
+    fetch('http://localhost:2774/api/pnls/2010-05-30', {
+      accept: 'application/json',
+    }).then(checkStatus)
+      .then(parseJSON)
+      .then(function (data){
+        cb(data);
+    })
+  }
+
+  componentDidMount() {
+    this.refresh(this.changeContent);
+    // this.setState({chartData : {
+    //   labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    //   series: [
+    //     [12, 9, 7, 8, 5],
+    //     [2, 1, 3.5, 7, 3],
+    //     [1, 3, 4, 5, 6]
+    //   ]}
+    // });
+  }
+
   render() {
     return (
       <div>
@@ -30,7 +71,8 @@ class Pnl extends Component {
                 <option value="2012-05-30">2012 2nd Quarter</option>
             </select>
         </div>
-        <ChartistGraph data={simpleLineChartData} type={'Line'} />
+        <ChartistGraph data={this.state.chartData} type={'Line'} />
+
       </div>
     );
   }

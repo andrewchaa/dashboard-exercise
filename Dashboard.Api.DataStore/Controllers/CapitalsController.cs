@@ -25,8 +25,8 @@ namespace Dashboard.Api.DataStore.Controllers
             var capitalsList = await _dataCruncher.ListMonthlyCapitals();
             return new DataViewModel
             {
-                Labels = capitalsList.First().Select(c => c.Date.ToString("MM-yy")),
-                Data = capitalsList.Select(c => c.Select(p => p.Amount)).ToList()
+                labels = capitalsList.First().Select(c => c.Date.ToString("MM-yy")),
+                series = capitalsList.Select(c => c.Select(p => p.Amount)).ToList()
             };
         }
 

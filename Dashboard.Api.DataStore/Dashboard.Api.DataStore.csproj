@@ -279,7 +279,6 @@
     <Compile Include="Domain\Contracts\IPnLRepository.cs" />
     <Compile Include="Domain\Contracts\IStrategyRepository.cs" />
     <Compile Include="Domain\Models\Capital.cs" />
-    <Compile Include="Domain\Models\DataViewModel.cs" />
     <Compile Include="Domain\Models\PnL.cs" />
     <Compile Include="Domain\Models\PnLByRegion.cs" />
     <Compile Include="Domain\Models\PnLCapital.cs" />
