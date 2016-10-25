@@ -16,6 +16,7 @@
   * Create all the tables required. 
   * Build the solution
   * Import the data from csv files
+  * npm install all the dependencies
   
 * Run the two projects, so that the websites start running.
 * Visit the home page of Board project.
