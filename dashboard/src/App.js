@@ -18,7 +18,7 @@ class App extends Component {
             </div>
             <div className="col-md-4">
                 <h3>Daily Returns</h3>
-                <p><Link to="/returns" className="btn btn-default">Daily Returns &raquo;</Link></p>
+                <p><Link to="/dailyreturns" className="btn btn-default">Daily Returns &raquo;</Link></p>
             </div>
         </div>
       </div>

@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import ChartistGraph from 'react-chartist';
 import checkStatus from './checkStatus';
 
-class Pnl extends Component {
+class DailyReturn extends Component {
   constructor(props) {
     super(props);
     this.state = {
       chartData : { labels: [], series: [] },
-      selectedDate : '2010-03-31'
+      selectedDate : '2010-03-31',
+      selectedRegion: 'US'
     };
   }
 
-  refresh = (date) => {
+  refresh = (region, date) => {
+    console.log(region);
     console.log(date);
-    fetch('http://localhost:2774/api/pnls/' + date, {
+    fetch('http://localhost:2774/api/dailyreturns/' + region + '/' + date, {
       accept: 'application/json',
     }).then(checkStatus)
       .then((response) => response.json())
@@ -24,7 +26,7 @@ class Pnl extends Component {
   }
 
   componentDidMount() {
-    this.refresh(this.state.selectedDate);
+    this.refresh(this.state.selectedRegion, this.state.selectedDate);
   }
 
   render() {
@@ -33,7 +35,17 @@ class Pnl extends Component {
         <h2>Cumulative P&amp;L By Region</h2>
 
         <div>
-            <select id="selDate" value={this.state.value} onChange={(event) => this.refresh(event.target.value)}>
+            <select value={this.state.selectedRegion}
+             onChange={(e) => this.refresh(e.target.value, this.state.selectedDate)
+            }>
+                <option value="AP">AP</option>
+                <option value="EU">EU</option>
+                <option value="US">US</option>
+            </select>
+        </div>
+        <div>
+            <select value={this.state.selectedDate}
+             onChange={(e) => this.refresh(this.state.selectedRegion, e.target.value)}>
                 <option value="2010-03-31">2010 1st Quarter</option>
                 <option value="2010-06-30">2010 2nd Quarter</option>
                 <option value="2010-09-30">2010 3rd Quarter</option>
@@ -52,4 +64,4 @@ class Pnl extends Component {
   }
 }
 
-export default Pnl;
+export default DailyReturn;
