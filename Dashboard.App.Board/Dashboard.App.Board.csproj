@@ -311,7 +311,7 @@
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\index.html" />
     <Content Include="Content\static\css\main.2c838885.css" />
-    <Content Include="Content\static\js\main.3d5ccd12.js" />
+    <Content Include="Content\static\js\main.8b76bd01.js" />
     <Content Include="Scripts\main.3d5ccd12.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -348,8 +348,8 @@
     </Content>
     <Content Include="Content\static\css\main.2c838885.css.map" />
     <Content Include="Scripts\main.3d5ccd12.js.map" />
-    <Content Include="Content\static\js\main.3d5ccd12.js.map" />
     <Content Include="Content\asset-manifest.json" />
+    <Content Include="Content\static\js\main.8b76bd01.js.map" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
