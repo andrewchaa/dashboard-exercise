@@ -308,6 +308,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chartist.min.css" />
+    <Content Include="Content\favicon.ico" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\static\css\main.2c838885.css" />
+    <Content Include="Content\static\js\main.3d5ccd12.js" />
+    <Content Include="Scripts\main.3d5ccd12.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -341,6 +346,10 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\static\css\main.2c838885.css.map" />
+    <Content Include="Scripts\main.3d5ccd12.js.map" />
+    <Content Include="Content\static\js\main.3d5ccd12.js.map" />
+    <Content Include="Content\asset-manifest.json" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -371,12 +380,14 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Pnl.cshtml" />
     <Content Include="Views\Home\Capital.cshtml" />
     <Content Include="Views\Home\DailyReturn.cshtml" />
+    <Content Include="Views\Home\YoIndex - Copy.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\React.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

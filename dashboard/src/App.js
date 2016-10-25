@@ -6,7 +6,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Dashboard</h1>
         <div className="row">
             <div className="col-md-4">
                 <h3>Cumulative P&L</h3>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import App from './App';
 import Pnl from './Pnl';
 import Capital from './Capital';
@@ -18,7 +18,7 @@ const AppContainer = React.createClass({
 })
 
 ReactDOM.render(
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={AppContainer}>
       <IndexRoute component={App} />
       <Route path="/pnls" component={Pnl}/>
