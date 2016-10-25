@@ -21,3 +21,7 @@ popd
 pushd .\Dashboard.App.ImportPnl\bin\Debug\
 Dashboard.App.ImportPnl.exe ..\..\..\Build\pnl.csv
 popd
+
+pushd .\dashboard
+npm i
+popd
